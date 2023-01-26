@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.modal-xl .modal-lg {
+  max-width: 95%;
+}
+
+.img-thumbnail {
+  cursor: pointer;
+}
+
+.thumbnail {
+  cursor: pointer;
+}
+
+.thumbnail .overlay {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  opacity: .2;
+  transition: .3s ease;
+}
+
+.thumbnail:hover .overlay {
+  opacity: 1;
+  color: #0056b3;
+}
+
+.thumbnail:hover .overlay .icon {
+  opacity: 1;
+  color: #0056b3;
+}
+
+.thumbnail .overlay .icon {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+app-login form {
+  border: 1px solid grey;
+  padding: 10% 15%;
+  margin-top: 20%;
+}
+
+.navbar-brand {
+  height: 165px;
+  width: 268px;
+  background-image: url(assets/calicot-low-resolution-color-logo.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* Hide the text. */
+  text-indent: -150%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ng-touched.ng-valid[required], .ng-valid.required  {
+  border: 1px solid #42A948;
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-touched.ng-invalid:not(form)  {
+  border: 1px solid #a94442; /* red */
+  border-left: 5px solid #a94442; /* red */
+}

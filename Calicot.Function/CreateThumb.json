@@ -1,0 +1,22 @@
+{
+    "configurationSource": "attributes",
+    "bindings": [
+      {
+        "type": "blobTrigger",
+        "connection": "AzureWebJobsStorage",
+        "path": "uploads/{name}",
+        "name": "myBlob"
+      },
+      {
+        "type": "blob",
+        "connection": "AzureWebJobsStorage",
+        "blobPath": "thumbs/tn_{name}",
+        "access": 2,
+        "direction": "out",
+        "name": "outputBlob"
+      }
+    ],
+    "disabled": false,
+    "scriptFile": "../bin/Calicot.Function.dll",
+    "entryPoint": "Calicot.Function.CreateThumb.Run"
+  }

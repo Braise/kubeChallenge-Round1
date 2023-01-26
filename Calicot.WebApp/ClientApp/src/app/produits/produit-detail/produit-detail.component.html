@@ -1,0 +1,41 @@
+<p *ngIf="!produit"><em>Chargement...</em></p>
+
+<ng-container *ngIf="produit">
+  <div class="card" style="width: 18rem;">
+    <div class="thumbnail" *ngIf="produit" (click)="open(fullimage)">
+      <!-- <img *ngIf="produit?.image && produit.image.length > 0" src="/api/image/{{produit.image}}?tn=true" class="card-img-top img-thumbnail" alt="{{produit.nom}}" (click)="open(fullimage)"> -->
+      <img *ngIf="produit?.imageThumbUrl && produit.imageThumbUrl.length > 0" src="{{produit.imageThumbUrl}}" class="card-img-top img-thumbnail" alt="{{produit.nom}}">
+      <div class="overlay">
+        <!-- <a href="#" class="icon" onclick="open(fullimage);return false;"> -->
+          <i class="fa-solid fa-expand icon" title="Expand"></i>
+        <!-- </a> -->
+      </div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{produit.nom}}</h5>
+      <p class="card-text">{{produit.description}}</p>
+      <p class="card-text"><span class="badge bg-info">{{produit.prix | currency}}</span></p>
+
+      <div class="btn-group" role="group" aria-label="Actions">
+        <button class="btn btn-success" (click)="editProduct(produit)" *ngIf="isAuthenticated"> Modifier</button>
+        <button class="btn btn-primary" type="button" [routerLink]="['/produits']">Retour à la liste de produits</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #fullimage let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{produit.nom}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <!-- <img *ngIf="produit?.image && produit.image.length > 0" src="/api/image/{{produit.image}}" class="card-img-top" alt="{{produit.nom}}"> -->
+      <img *ngIf="produit?.imageUrl && produit.imageUrl.length > 0" src="{{produit.imageUrl}}" class="card-img-top" alt="{{produit.nom}}">
+    </div>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Fermer click')">Fermer</button>
+    </div> -->
+  </ng-template>
+</ng-container>

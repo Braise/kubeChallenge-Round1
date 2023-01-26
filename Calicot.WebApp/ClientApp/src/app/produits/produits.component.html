@@ -1,0 +1,29 @@
+<p>Liste des produits Calicot :</p>
+
+<p *ngIf="!produits"><em>Chargement...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="produits">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <!-- <th>Description</th> -->
+      <th>Prix</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produit of produits">
+      <td><a [routerLink]="['/produits/produit-detail', produit.id]">{{ produit.nom }}</a></td>
+      <!-- <td>{{ produit.description }}</td> -->
+      <td>{{ produit.prix | currency }}</td>
+      <td>
+        <div class="btn-group" role="group" aria-label="Actions" *ngIf="isAuthenticated">
+          <button class="btn btn-danger" (click)="deleteProduct(produit)">Supprimer</button>
+          <button class="btn btn-primary" (click)="editProduct(produit)">Modifier</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- <div *ngIf="socialAuthService.authState | async as user">{{ user.email }} {{ user }}</div> -->
+<button class="btn btn-secondary" (click)="addProduct()" *ngIf="isAuthenticated"> Ajouter un produit</button>

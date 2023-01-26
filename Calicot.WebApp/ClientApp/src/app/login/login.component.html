@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <!-- <form [formGroup]="loginForm" (ngsubmit)="onSubmit()" class="needs-validation">
+        <div class="form-group">
+          <label for="UserName">UserName</label>
+          <input type="text" class="form-control" formControlName="UserName" required>
+        </div>
+        <div *ngIf="UserName && UserName.invalid && (UserName.dirty || UserName.touched)"
+        class="alert alert-danger">
+          <div *ngIf="UserName.invalid && (UserName.dirty || UserName.touched) && UserName.errors && UserName.errors.required">
+            UserName is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" formControlName="Password" class="form-control" required>
+        </div>
+        <div *ngIf="Password && Password.invalid && (Password.dirty || Password.touched)"
+        class="alert alert-danger">
+          <div *ngIf="Password.errors && Password.errors.required">
+            Password is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <button [disabled]="loading || loginForm.invalid" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+          </button>
+          <br />
+
+        </div>
+        <div>
+          <button class="btn btn-primary" (click)="loginWithGoogle()">
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm mr-1"
+            ></span>
+            Login with Google
+          </button>
+          <div *ngIf="error" class="alert alert-danger mt-3 mb-0">
+            {{ error }}
+          </div>
+        </div>
+      </form> -->
+
+      <div>
+        <script
+          src="https://accounts.google.com/gsi/client"
+          async
+          defer
+        ></script>
+
+        <div
+          id="g_id_onload"
+          data-client_id="1014581424284-8fnrj0fis18nl0ob7im8lvsj86c9og5f.apps.googleusercontent.com"
+          data-context="signin"
+          data-ux_mode="popup"
+          data-callback=handleCredentialResponse
+          data-itp_support="true"
+        ></div>
+
+        <div
+          class="g_id_signin"
+          data-type="standard"
+          data-shape="pill"
+          data-theme="outline"
+          data-text="signin_with"
+          data-size="large"
+          data-logo_alignment="left"
+        ></div>
+      </div>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>

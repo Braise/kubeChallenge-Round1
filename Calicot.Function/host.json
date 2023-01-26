@@ -1,0 +1,25 @@
+{
+    "version": "2.0",
+    "concurrency": { 
+            "dynamicConcurrencyEnabled": true, 
+            "snapshotPersistenceEnabled": true 
+        },
+    "extensions": {
+        "blobs": {
+            "maxDegreeOfParallelism": 5
+        }
+    },
+    "functions": [ "CreateThumb" ],
+    "functionTimeout": "00:05:00",
+    "logging": {
+        "applicationInsights": {
+            "samplingSettings": {
+                "isEnabled": true,
+                "excludedTypes": "Request"
+            }
+        }
+    },
+    "managedDependency": {
+        "enabled": true
+    }
+}

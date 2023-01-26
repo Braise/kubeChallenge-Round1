@@ -1,0 +1,57 @@
+<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']" title="Calicot">Calicot</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li *ngIf="socialAuthService.authState | async as socialUser; else elseBlock">
+            <a href="#" class="nav-link text-dark" (click)="logout()" title="Logout">Hello, {{socialUser.name}}!</a>
+            <!-- <button mat-raised-button (click)="logout()">Logout</button> -->
+          </li>
+          <ng-template #elseBlock>
+            <li>
+              <a class="nav-link text-dark" [routerLink]="['/login']">Login</a>
+            </li>
+          </ng-template>
+          <!-- <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <div class="text-dark" *ngIf="isAuthenticated; else elseBlock">Bienvenu {{currentUser.firstName}} {{currentUser.lastName}} <a class="nav-link text-dark" [routerLink]="['/logout']">Logout</a></div>
+            <ng-template #elseBlock>
+              <a class="nav-link text-dark" [routerLink]="['/login']">Login</a>
+            </ng-template>
+
+          </li> -->
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']" title="Accueil">Accueil</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/produits']" title="Produits">Produits</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

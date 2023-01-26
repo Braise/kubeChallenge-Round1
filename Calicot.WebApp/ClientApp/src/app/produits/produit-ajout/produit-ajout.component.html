@@ -1,0 +1,149 @@
+<div class="col-md-6 produit-container">
+  <h2 class="text-center">Ajout de produit</h2>
+  <form [formGroup]="editForm" (ng-submit)="submit()">
+    <!-- <input type="hidden" formControlName="imageUrl" placeholder="imageUrl" name="imageUrl" class="form-control" id="imageUrl" [readonly]="true">
+    <input type="hidden" formControlName="imageThumbUrl" placeholder="imageThumbUrl" name="imageThumbUrl" class="form-control" id="imageThumbUrl" [readonly]="true"> -->
+
+    <div class="row" style="width: 38rem;">
+      <div class="col-md-8">
+        <div class="form-group thumbnail" *ngIf="produit">
+          <img *ngIf="produit?.image && produit.image.length > 0" src="/api/image/{{produit.image}}?tn=true" class="card-img-top img-thumbnail" alt="{{produit.nom}}" (click)="open(fullimage)">
+          <div class="overlay">
+            <a href="#" class="icon" title="Expand">
+              <i class="fa fa-expand"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nom">Nom:</label>
+          <input type="text" formControlName="nom" placeholder="nom" name="nom" class="form-control" id="nom">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea formControlName="description" placeholder="description" name="description" class="form-control"
+            id="description" cols="40" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="prix">Prix:</label>
+          <input type="number" formControlName="prix" placeholder="prix" name="prix" class="form-control" id="prix">
+        </div>
+
+        <div class="btn-group" role="group" aria-label="Actions">
+          <button class="btn btn-success" type="button" [disabled]="!editForm.valid" (click)="submit();">Ajout</button>
+          <button class="btn btn-primary" type="button" (click)="open(content)">Changer l'image</button>
+          <button class="btn btn-primary" type="button" [routerLink]="['/produits']">Retour à la liste de
+            produits</button>
+        </div>
+      </div>
+    </div>
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Televersement d'image</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+        <div class="form-group">
+          <label for="file">Choisir un fichier</label>
+          <input type="file" ng2FileSelect [uploader]="uploader" />
+          <div class="hidden">
+            <input type="hidden" formControlName="image" placeholder="image" name="image" class="form-control"
+              id="image">
+          </div>
+        </div>
+
+        <p>File d'attente : {{ uploader.queue.length }}</p>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th width="50%">Nom</th>
+              <th>Size</th>
+              <th>Progrès</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of uploader.queue">
+              <td><strong>{{ item?.file?.name }}</strong></td>
+              <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+              <td *ngIf="uploader.options.isHTML5">
+                <div class="progress" style="margin-bottom: 0;">
+                  <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+                </div>
+              </td>
+              <td class="text-center">
+                <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+              </td>
+              <td nowrap>
+                <button type="button" class="btn btn-success btn-xs" (click)="item.upload()"
+                  [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                  <span class="glyphicon glyphicon-upload"></span> Téléverser
+                </button>
+                <button type="button" class="btn btn-warning btn-xs" (click)="item.cancel()"
+                  [disabled]="!item.isUploading">
+                  <span class="glyphicon glyphicon-ban-circle"></span> Annuler
+                </button>
+                <button type="button" class="btn btn-danger btn-xs" (click)="item.remove()">
+                  <span class="glyphicon glyphicon-trash"></span> Retirer
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div>
+          <div>
+            Progression :
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()"
+            [disabled]="!uploader.getNotUploadedItems().length">
+            <span class="glyphicon glyphicon-upload"></span> Téléverser tous
+          </button>
+          <button type="button" class="btn btn-warning btn-s" (click)="uploader.cancelAll()"
+            [disabled]="!uploader.isUploading">
+            <span class="glyphicon glyphicon-ban-circle"></span> Annuler tous
+          </button>
+          <button type="button" class="btn btn-danger btn-s" (click)="uploader.clearQueue()"
+            [disabled]="!uploader.queue.length">
+            <span class="glyphicon glyphicon-trash"></span> Retirer tous
+          </button>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Terminer</button>
+      </div>
+    </ng-template>
+
+
+    <ng-template #fullimage let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{produit.nom}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img *ngIf="produit?.image && produit.image.length > 0" src="/api/image/{{produit.image}}" class="card-img-top" alt="{{produit.nom}}">
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Fermer click')">Fermer</button>
+      </div> -->
+    </ng-template>
+
+  </form>
+</div>
