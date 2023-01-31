@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Calicot.WebApp.Models;
+    using Calicot.Shared.Models;
 
 
-namespace Calicot.WebApp.Services {
+namespace Calicot.Shared.Services {
 
     public interface ICosmosDbService
     {

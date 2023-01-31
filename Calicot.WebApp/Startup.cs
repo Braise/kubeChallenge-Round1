@@ -14,12 +14,12 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Azure.Cosmos;
-using Calicot.WebApp.Data;
-using Calicot.WebApp.Models;
-using Calicot.WebApp.Services;
+using Calicot.Shared.Data;
+using Calicot.Shared.Models;
+using Calicot.Shared.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
-using Calicot.WebApp.Helpers;
+using Calicot.Shared.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Calicot.WebApp

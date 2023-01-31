@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Cosmos;
-using Calicot.WebApp.Models;
+using Calicot.Shared.Models;
 
-namespace Calicot.WebApp.Data {
+namespace Calicot.Shared.Data {
     public class CalicotDB : DbContext
     {
         public CalicotDB (DbContextOptions<CalicotDB> options)
@@ -14,6 +14,6 @@ namespace Calicot.WebApp.Data {
         {
         }
 
-        public DbSet<Calicot.WebApp.Models.Produit> Produits { get; set; } = default!;
+        public DbSet<Calicot.Shared.Models.Produit> Produits { get; set; } = default!;
     }
 }

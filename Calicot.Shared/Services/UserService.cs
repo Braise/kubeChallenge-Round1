@@ -6,11 +6,10 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
-// using Calicot.WebApp.Entities;
-using Calicot.WebApp.Helpers;
-using Calicot.WebApp.Models;
+using Calicot.Shared.Helpers;
+using Calicot.Shared.Models;
 
-namespace Calicot.WebApp.Services
+namespace Calicot.Shared.Services
 {
     public interface IUserService
     {

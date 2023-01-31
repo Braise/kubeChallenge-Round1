@@ -5,7 +5,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 
-namespace Calicot.WebApp.Helpers
+namespace Calicot.Shared.Helpers
 {
     public class JwtGenerator
     {

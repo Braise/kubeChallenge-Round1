@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
+namespace Calicot.Shared.Models;
 public class ExternalLoginModel
 {
     [Required]
