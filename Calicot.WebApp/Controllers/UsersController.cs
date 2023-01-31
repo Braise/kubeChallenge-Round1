@@ -1,13 +1,13 @@
 #nullable disable
 using Microsoft.AspNetCore.Mvc;
-using Calicot.WebApp.Models;
-using Calicot.WebApp.Services;
+using Calicot.Shared.Models;
+using Calicot.Shared.Services;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.Extensions.Configuration;
 using Google.Apis.Auth;
 using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
-using Calicot.WebApp.Helpers;
+using Calicot.Shared.Helpers;
 
 namespace Calicot.WebApp.Controllers
 {

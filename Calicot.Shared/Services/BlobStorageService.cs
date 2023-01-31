@@ -10,8 +10,8 @@ using Microsoft.AspNetCore.Http;
 using System.Drawing;
 using System.Diagnostics;
 
-namespace Calicot.WebApp.Services
-{
+namespace Calicot.Shared.Services;
+
     public class BlobStorageService : IBlobStorageService
     {
         string connectionString = string.Empty;
@@ -192,4 +192,3 @@ namespace Calicot.WebApp.Services
         //     }
         // }
     }
-}

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Calicot.WebApp.Data;
-using Calicot.WebApp.Models;
-using Calicot.WebApp.Services;
+using Calicot.Shared.Data;
+using Calicot.Shared.Models;
+using Calicot.Shared.Services;
 using System.ComponentModel.DataAnnotations;
 
 namespace Calicot.WebApp.Controllers

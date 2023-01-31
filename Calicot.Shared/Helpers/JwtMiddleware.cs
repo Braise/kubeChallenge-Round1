@@ -6,9 +6,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Calicot.WebApp.Services;
+using Calicot.Shared.Services;
 
-namespace Calicot.WebApp.Helpers
+namespace Calicot.Shared.Helpers
 {
     public class JwtMiddleware
     {

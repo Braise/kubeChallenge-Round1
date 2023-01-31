@@ -9,8 +9,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore.Cosmos;
 using Azure.Cosmos;
-using Calicot.WebApp.Data;
-using Calicot.WebApp.Services;
+using Calicot.Shared;
+using Calicot.Shared.Data;
+using Calicot.Shared.Services;
 
 namespace Calicot.WebApp
 {

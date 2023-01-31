@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Calicot.WebApp.Models;
-using Calicot.WebApp.Services;
+using Calicot.Shared.Models;
+using Calicot.Shared.Services;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.Cosmos.Fluent;
 using Microsoft.Extensions.Configuration;
 
-namespace Calicot.WebApp.Services {
+namespace Calicot.Shared.Services {
     public class CosmosDbService: ICosmosDbService
     {
         private Container _container;

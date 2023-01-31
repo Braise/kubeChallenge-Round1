@@ -1,4 +1,4 @@
-namespace Calicot.WebApp.Helpers
+namespace Calicot.Shared.Helpers
 {
     public class AppSettings
     {
