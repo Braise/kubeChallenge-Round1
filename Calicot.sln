@@ -3,17 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calicot.Function", "Calicot.Function\Calicot.Function.csproj", "{0F6CA6BF-4F97-4B04-B0C5-247E059529BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calicot.Function", "Calicot.Function\Calicot.Function.csproj", "{0F6CA6BF-4F97-4B04-B0C5-247E059529BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calicot.WebApp", "Calicot.WebApp\Calicot.WebApp.csproj", "{82BCC5D3-3BC9-4A9E-A363-17B7EAB61641}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calicot.WebApp", "Calicot.WebApp\Calicot.WebApp.csproj", "{82BCC5D3-3BC9-4A9E-A363-17B7EAB61641}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calicot.Shared", "Calicot.Shared\Calicot.Shared.csproj", "{1C0B5DC6-3503-4B81-A60D-DB128972EB15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0F6CA6BF-4F97-4B04-B0C5-247E059529BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,5 +23,15 @@ Global
 		{82BCC5D3-3BC9-4A9E-A363-17B7EAB61641}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82BCC5D3-3BC9-4A9E-A363-17B7EAB61641}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82BCC5D3-3BC9-4A9E-A363-17B7EAB61641}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C0B5DC6-3503-4B81-A60D-DB128972EB15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C0B5DC6-3503-4B81-A60D-DB128972EB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C0B5DC6-3503-4B81-A60D-DB128972EB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C0B5DC6-3503-4B81-A60D-DB128972EB15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50B534A8-B525-4935-80E4-D374CF459890}
 	EndGlobalSection
 EndGlobal
