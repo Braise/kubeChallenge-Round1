@@ -1,5 +1,5 @@
 {
-  "name": "Calicot.WebApp",
+  "name": "calicot.webapp",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -25,13 +25,13 @@
     "@angular/platform-server": "15.1.2",
     "@angular/router": "15.1.2",
     "@fortawesome/fontawesome-free": "^6.2.1",
-    "@ng-bootstrap/ng-bootstrap": "^14.0.1",
+    "@ng-bootstrap/ng-bootstrap": "^14.0.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "core-js": "^3.26.1",
     "jquery": "^3.6.2",
     "lodash": "^4.17.21",
-    "ng2-file-upload": "3.0.0",
+    "ng2-file-upload": "^1.4.0",
     "oidc-client": "^1.11.5",
     "run-script-os": "^1.1.6",
     "rxjs": "^7.6.0",

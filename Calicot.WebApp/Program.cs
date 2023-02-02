@@ -24,12 +24,12 @@ namespace Calicot.WebApp
             {
                 //3. Get the instance of CalicotDBcontext in our services layer
                 var services = scope.ServiceProvider;
-                var context = services.GetRequiredService<CalicotDB>();
-                var blobStorageService = services.GetRequiredService<IBlobStorageService>();
-                var cosmosDbService = services.GetRequiredService<ICosmosDbService>();
+                //var context = services.GetRequiredService<CalicotDB>();
+                //var blobStorageService = services.GetRequiredService<IBlobStorageService>();
+                //var cosmosDbService = services.GetRequiredService<ICosmosDbService>();
                 IWebHostEnvironment env = host.Services.GetRequiredService<IWebHostEnvironment>();
                 //4. Call the DataGenerator to create sample data
-                DataGenerator.Initialize(services, blobStorageService, env, cosmosDbService);
+                //DataGenerator.Initialize(services, blobStorageService, env, cosmosDbService);
             }
             
             host.Run();

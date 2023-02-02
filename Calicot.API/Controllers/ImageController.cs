@@ -14,7 +14,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.StaticFiles;
 
-namespace Calicot.WebApp.Controllers
+namespace Calicot.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -23,12 +23,14 @@ namespace Calicot.WebApp.Controllers
         string imagesContainerName = "uploads";
         string thumbsContainerName = "thumbs";
         string cdnBaseUrl = "https://calicot.azureedge.net/";
-        private readonly CalicotDB _context;
+        // private readonly CalicotDB _context;
         private IWebHostEnvironment _env;
         private IBlobStorageService _blobStorageService;
-        public ImageController(CalicotDB context, IWebHostEnvironment env, IBlobStorageService blobStorageService, IConfiguration configuration)
+
+        //CalicotDB context,
+        public ImageController(IWebHostEnvironment env, IBlobStorageService blobStorageService, IConfiguration configuration)
         {
-            _context = context;
+            // _context = context;
             _env = env;
             _blobStorageService = blobStorageService;
             imagesContainerName = configuration.GetSection("AppSettings:FullImageContainer").Value??"";
@@ -36,7 +38,7 @@ namespace Calicot.WebApp.Controllers
             cdnBaseUrl = configuration.GetSection("AppSettings:cdnBaseUrl").Value??"";
         }
 
-        public string GetImageCdnUrl(string fileName, bool tn) {
+        private string GetImageCdnUrl(string fileName, bool tn) {
             var cdnUrl = this.cdnBaseUrl;
             var container = imagesContainerName;
             if(tn) {

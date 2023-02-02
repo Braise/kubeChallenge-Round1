@@ -2,5 +2,6 @@ export const environment = {
   production: true,
   usersUrl: '/api/Users/',
   produitsUrl: '/api/Produits/',
-  baseUrl : '/'
+  baseUrl: '/',
+  apiEndpoint: 'https://calicot-api.azurewebsites.net'
 };

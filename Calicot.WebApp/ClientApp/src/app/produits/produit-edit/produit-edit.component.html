@@ -11,7 +11,7 @@
 
         <div class="card" style="width: 18rem;">
           <div class="thumbnail" *ngIf="produit">
-            <img *ngIf="produit?.image && produit.image.length > 0" src="/api/image/{{produit.image}}?tn=true" class="card-img-top img-thumbnail" alt="{{produit.nom}}" (click)="open(fullimage)">
+            <img *ngIf="produit?.image && produit.image.length > 0" src="{{apiEndPoint}}/api/image/{{produit.image}}?tn=true" class="card-img-top img-thumbnail" alt="{{produit.nom}}" (click)="open(fullimage)">
             <div class="overlay">
               <a href="#" class="icon" title="Expand">
                 <i class="fa fa-expand"></i>
@@ -144,7 +144,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <img *ngIf="produit?.image && produit.image.length > 0" src="/api/image/{{produit.image}}" class="card-img-top" alt="{{produit.nom}}">
+        <img *ngIf="produit?.image && produit.image.length > 0" src="{{apiEndPoint}}/api/image/{{produit.image}}" class="card-img-top" alt="{{produit.nom}}">
       </div>
       <!-- <div class="modal-footer">
         <button type="button" class="btn btn-outline-dark" (click)="modal.close('Fermer click')">Fermer</button>

@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     this.socialAuthService.authState.subscribe((user) => {
       this.socialUser = user;
       this.isLoggedin = user != null;
-      console.log(this.socialUser);
+      console.log('SocialUser:', this.socialUser);
     });
 
     global.handleCredentialResponse = (response: any) => {

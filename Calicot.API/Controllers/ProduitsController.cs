@@ -10,7 +10,7 @@ using Calicot.Shared.Models;
 using Calicot.Shared.Services;
 using System.ComponentModel.DataAnnotations;
 
-namespace Calicot.WebApp.Controllers
+namespace Calicot.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -32,7 +32,7 @@ namespace Calicot.WebApp.Controllers
 
         }
 
-        public string GetImageCdnUrl(string fileName, bool tn) {
+        private string GetImageCdnUrl(string fileName, bool tn) {
             var cdnUrl = this.cdnBaseUrl;
             var container = imagesContainerName;
             if(tn) {

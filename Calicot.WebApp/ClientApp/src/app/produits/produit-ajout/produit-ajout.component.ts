@@ -7,6 +7,7 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FileUploader } from 'ng2-file-upload';
 import { first } from 'rxjs/operators';
 import { AppService } from '../../app.service';
+import { environment } from './../../../environments/environment';
 import { Produit, ProduitVM } from './../../model/produits';
 
 
@@ -26,13 +27,15 @@ export class ProduitAjoutComponent implements OnInit {
   response: string;
   closeResult = '';
 
+  apiEndPoint = environment.apiEndpoint
+
   constructor(private route: ActivatedRoute,
               private formBuilder: FormBuilder,
               private router: Router,
               private appService: AppService,
               private modalService: NgbModal,
               @Inject('BASE_URL') baseUrl: string) {
-                this.uploader = new FileUploader({ url: baseUrl + 'api/FileUpload' });
+                this.uploader = new FileUploader({ url: this.apiEndPoint + 'api/FileUpload' });
 
                 this.hasBaseDropZoneOver = false;
                 this.hasAnotherDropZoneOver = false;

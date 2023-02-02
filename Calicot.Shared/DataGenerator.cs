@@ -92,8 +92,6 @@ public class DataGenerator
             }
         }
         return default!;
-        // byte[] fileData = File.ReadAllBytes(savePath);
-        // return blobStorageService.UploadFileToBlob(fileName, fileData, contentType);
     }
 
 }

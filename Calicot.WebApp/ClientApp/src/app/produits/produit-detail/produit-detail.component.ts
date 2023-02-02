@@ -10,6 +10,7 @@ import { Produit, ProduitVM } from '../../model/produits';
 import { environment } from './../../../environments/environment';
 import { AuthService } from './../../_services/auth.service';
 
+
 @Component({
   selector: 'app-produit-detail',
   templateUrl: './produit-detail.component.html',
@@ -24,6 +25,7 @@ export class ProduitDetailComponent implements OnInit {
   socialAuthService: SocialAuthService;
   socialUser!: SocialUser | null;
   private authenticatePath = environment.usersUrl + 'Authenticate';
+  apiEndPoint = environment.apiEndpoint
 
   constructor(private route: ActivatedRoute,
     private router: Router,

@@ -16,7 +16,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Hosting;
 using System.Diagnostics;
 
-namespace Calicot.WebApp.Controllers
+namespace Calicot.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

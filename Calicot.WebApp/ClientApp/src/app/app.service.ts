@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Inject, Injectable, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { environment } from '../environments/environment';
 import { MessageService } from './message.service';
 import { ApiResponse } from './model/ApiResponse';
 import { Produit, ProduitVM } from './model/produits';
@@ -19,11 +20,12 @@ export class AppService {
       private authService: AuthService,
       private socialAuthService: SocialAuthService,
       @Inject('BASE_URL') baseUrl: string) {
-    this.baseUrl = baseUrl + 'api/Produits/';
-  }
+        this.baseUrl = environment.apiEndpoint + environment.produitsUrl;
+      }
 
   getProducts(): Observable<Produit[]> {
     // return this.http.get<ApiResponse>(this.baseUrl);
+    console.log(this.baseUrl);
     return this.http.get<Produit[]>(this.baseUrl).pipe(
       tap(_ => this.log('fetched products')),
       catchError(this.handleError<Produit[]>('getProducts', []))

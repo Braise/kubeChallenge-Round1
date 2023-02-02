@@ -8,6 +8,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { first } from 'rxjs/operators';
 import { AppService } from '../../app.service';
 import { Produit } from '../../model/produits';
+import { environment } from './../../../environments/environment';
 import { AuthService } from './../../_services/auth.service';
 
 // const URL = '/api/';
@@ -27,6 +28,8 @@ export class ProduitEditComponent implements OnInit {
   response: string;
   closeResult = '';
   isAuthenticated!: boolean;
+
+  apiEndPoint = environment.apiEndpoint
 
   constructor(
     private route: ActivatedRoute,

@@ -17,6 +17,7 @@ const providers = [
 ];
 
 if (environment.production) {
+  console.log("Environnment: ", environment.production);
   enableProdMode();
 }
 

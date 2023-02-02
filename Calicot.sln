@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calicot.Function", "Calicot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calicot.WebApp", "Calicot.WebApp\Calicot.WebApp.csproj", "{82BCC5D3-3BC9-4A9E-A363-17B7EAB61641}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calicot.API", "Calicot.API\Calicot.API.csproj", "{BF242870-C5E9-448A-A65B-3182CE2DB2F6}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calicot.Shared", "Calicot.Shared\Calicot.Shared.csproj", "{1C0B5DC6-3503-4B81-A60D-DB128972EB15}"
 EndProject
 Global
@@ -23,6 +25,10 @@ Global
 		{82BCC5D3-3BC9-4A9E-A363-17B7EAB61641}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82BCC5D3-3BC9-4A9E-A363-17B7EAB61641}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82BCC5D3-3BC9-4A9E-A363-17B7EAB61641}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF242870-C5E9-448A-A65B-3182CE2DB2F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF242870-C5E9-448A-A65B-3182CE2DB2F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF242870-C5E9-448A-A65B-3182CE2DB2F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF242870-C5E9-448A-A65B-3182CE2DB2F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C0B5DC6-3503-4B81-A60D-DB128972EB15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1C0B5DC6-3503-4B81-A60D-DB128972EB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C0B5DC6-3503-4B81-A60D-DB128972EB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
