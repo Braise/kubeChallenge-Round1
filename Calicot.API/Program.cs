@@ -71,7 +71,8 @@ builder.Services.AddCors(options => options.AddPolicy(PolicyName, build =>
 {
     build
         .SetPreflightMaxAge(TimeSpan.MaxValue)
-        .WithOrigins("https://calicot-webapp.azurewebsites.net",
+        .WithOrigins("https://calicot.azurewebsites.net",
+                    "https://calicotapi.azurewebsites.net",
                     "https://accounts.google.com",
                     "https://play.google.com",
                     "https://localhost")
@@ -104,10 +105,10 @@ builder.Services.AddAuthorization();
 // This is the tricky part to inject the configuration so the public key is ued to validate the JWT
 builder.Services.AddTransient<IConfigureOptions<JwtBearerOptions>, ConfigureJwtBearerOptions>();
 
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Calicot.API", Version = "v1" });
-});
+//builder.Services.AddSwaggerGen(c =>
+//{
+//    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Calicot.API", Version = "v1" });
+//});
 
 var app = builder.Build();
 
@@ -144,9 +145,9 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<JwtMiddleware>();
 
-app.UseSwagger();
-app.UseSwaggerUI();
-app.MapSwagger();
+//app.UseSwagger();
+//app.UseSwaggerUI();
+//app.MapSwagger();
 
 
 app.MapControllers();

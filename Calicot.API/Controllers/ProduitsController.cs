@@ -18,7 +18,7 @@ namespace Calicot.API.Controllers
     {
         string imagesContainerName = "uploads";
         string thumbsContainerName = "thumbs";
-        string cdnBaseUrl = "https://calicot.azureedge.net/";
+        string cdnBaseUrl = "https://calicot-cdn.azureedge.net/";
         private IBlobStorageService _blobStorageService;
         private ICosmosDbService _cosmosDbService;
 
