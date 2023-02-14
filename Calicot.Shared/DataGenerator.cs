@@ -39,7 +39,7 @@ public class DataGenerator
             var image1 = uploadImageFile("0000065_promo-hoodie-homme_550.png", blobStorageService, env);
             var image2 = uploadImageFile("0000063_hoodie-femme_550.png", blobStorageService, env);
             var image3 = uploadImageFile("0000018_gants-tactiles_550.jpeg", blobStorageService, env);
-            var image4 = uploadImageFile("socks.jpeg", blobStorageService, env);
+            var image4 = uploadImageFile("socks.jpg", blobStorageService, env);
             var missing_image = uploadImageFile("missing_image.jpg", blobStorageService, env);
 
 

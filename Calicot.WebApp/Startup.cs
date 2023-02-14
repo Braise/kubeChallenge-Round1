@@ -75,8 +75,8 @@ namespace Calicot.WebApp
             {
                 build
                     .SetPreflightMaxAge(TimeSpan.MaxValue)
-                    .WithOrigins("https://calicot-webapp.azurewebsites.net",
-                                "https://calicot-api.azurewebsites.net",
+                    .WithOrigins("https://calicot.azurewebsites.net",
+                                "https://calicotapi.azurewebsites.net",
                                 "https://accounts.google.com",
                                 "https://play.google.com",
                                 "https://localhost")
