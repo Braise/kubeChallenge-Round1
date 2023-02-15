@@ -6,6 +6,10 @@ services:
       dockerfile: ./Calicot.API/Dockerfile
     ports:
       - 8090:443
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets/a184a0c7-33c3-4ddf-af6a-a1029cae1cc5:/root/.microsoft/usersecrets/a184a0c7-33c3-4ddf-af6a-a1029cae1cc5
   calicot.webapp:
     build:
       context: .
@@ -15,5 +19,4 @@ services:
       - 8092:443
     depends_on:
       - calicot.api
-    
    

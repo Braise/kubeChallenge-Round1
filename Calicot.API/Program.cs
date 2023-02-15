@@ -167,10 +167,15 @@ app.Run();
 static async Task<CosmosDbService> InitializeCosmosClientInstanceAsync(IConfigurationSection configurationSection)
 {
     string databaseName = configurationSection.GetValue<string>("DatabaseName") ?? "";
-    string containerName = configurationSection.GetSection("ContainerName").Value??"";
-    string account = configurationSection.GetSection("Account").Value??"";
-    string key = configurationSection.GetSection("Key").Value??"";
-    
+    string containerName = configurationSection.GetSection("ContainerName").Value ?? "";
+    string account = configurationSection.GetSection("Account").Value ?? "";
+    string key = configurationSection.GetSection("Key").Value ?? "";
+
+    Console.WriteLine($"databaseName : {databaseName}");
+    Console.WriteLine($"containerName : {containerName}");
+    Console.WriteLine($"account : {account}");
+    Console.WriteLine($"key : {key}");
+
     Microsoft.Azure.Cosmos.CosmosClient client = new Microsoft.Azure.Cosmos.CosmosClient(account, key);
     CosmosDbService cosmosDbService = new CosmosDbService(client, databaseName, containerName);
     Microsoft.Azure.Cosmos.DatabaseResponse database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
