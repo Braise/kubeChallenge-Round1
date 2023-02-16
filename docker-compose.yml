@@ -17,6 +17,8 @@ services:
     ports:
       - 8091:80
       - 8092:443
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets/a184a0c7-33c3-4ddf-af6a-a1029cae1cc5:/root/.microsoft/usersecrets/a184a0c7-33c3-4ddf-af6a-a1029cae1cc5
     depends_on:
       - calicot.api
    

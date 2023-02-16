@@ -29,12 +29,12 @@ WORKDIR /app/Calicot.WebApp
 RUN dotnet build Calicot.WebApp.csproj -c Release -o /app/build
 
 FROM build AS publish
-RUN npm install --prefix ./ClientApp/ @angular/cli
-RUN dotnet publish "Calicot.WebApp.csproj" -c Release -o /app/publish
+# RUN npm install --prefix ./ClientApp/ @angular/cli
+# RUN dotnet publish "Calicot.WebApp.csproj" -c Release -o /app/publish
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
+# FROM base AS final
+# WORKDIR /app
+# COPY --from=publish /app/publish .
 
-USER 1001
-ENTRYPOINT ["dotnet", "Calicot.WebApp.dll"]
+# USER 1001
+# ENTRYPOINT ["dotnet", "Calicot.WebApp.dll"]
