@@ -1,4 +1,5 @@
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+EXPOSE 80
 EXPOSE 443
 ENV ASPNETCORE_ENVIRONMENT=Development
 
