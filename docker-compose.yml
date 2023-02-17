@@ -5,13 +5,16 @@ services:
       context: .
       dockerfile: ./Calicot.API/Dockerfile
     ports:
-      - 8090:80
-      - 8091:443
+      - 5028:80
+      - 7196:443
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=super_password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets/a184a0c7-33c3-4ddf-af6a-a1029cae1cc5:/root/.microsoft/usersecrets/a184a0c7-33c3-4ddf-af6a-a1029cae1cc5
+      - ~/.aspnet/https:/https:ro
   calicot.webapp:
     build:
       context: .
@@ -19,9 +22,15 @@ services:
     ports:
       - 8092:80
       - 8093:443
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.SpaProxy
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=super_password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets/a184a0c7-33c3-4ddf-af6a-a1029cae1cc5:/root/.microsoft/usersecrets/a184a0c7-33c3-4ddf-af6a-a1029cae1cc5
-      - ASPNETCORE_URLS=http://+:80
+      - ~/.aspnet/https:/https:ro
     depends_on:
       - calicot.api
    
